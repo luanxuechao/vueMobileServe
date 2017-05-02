@@ -22,8 +22,8 @@ module.exports = {
     var userBean = req.allParams();
     User.findOne({where: {userName: userBean.userName}}).exec(function (err, user) {
       if (err) return res.serverError(err);
-      if (user.password == userBean.userName) {
-        res.json({result: true});
+      if (user.password == userBean.password) {
+        res.json(user);
         return res.end();
       } else {
         res.json({result: true});
