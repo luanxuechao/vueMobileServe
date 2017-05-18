@@ -22,11 +22,13 @@
     "rc": "1.0.1",
     "sails": "~0.12.11",
     "sails-disk": "~0.10.9",
-    "sails-mysql": "^0.11.5"
+    "sails-mysql": "^0.11.5",
+    "superagent": "^3.5.2"
   },
   "scripts": {
     "debug": "node debug app.js",
-    "start": "node app.js"
+    "start": "node app.js",
+    "test": "mocha"
   },
   "main": "app.js",
   "repository": {
@@ -34,5 +36,8 @@
     "url": "git://github.com/chao/chatServer.git"
   },
   "author": "chao",
-  "license": ""
+  "license": "",
+  "devDependencies": {
+    "should": "^11.2.1"
+  }
 }
