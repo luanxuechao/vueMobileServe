@@ -6,7 +6,7 @@ var sails = require('sails');
 var rc = require('rc');
 var superagent = require('superagent');
 
-describe('myapp.js', function () {
+describe('UserController', function () {
   this.timeout(5000)
   before(function (done) {
     sails.lift({
@@ -35,10 +35,9 @@ describe('myapp.js', function () {
     });
   });
   it('#login', function (done) {
-    var agent = superagent.agent;
-    agent(sails.hooks.http.app).get('http://localhost:1337/user/login?userName=luan&password=luan').end(function (err, res) {
+    var agent = superagent.agent();
+    agent.get('http://localhost:1337/user/login?userName=luan&password=luan').end(function (err, res) {
       // console.log(err, res)
-
       should(res.body).be.have.property('id');
       should(res.body).be.have.property('userName');
       should(res.body).be.have.property('password');
